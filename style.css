@@ -8,6 +8,15 @@
     src : url("font/chuangzhonghei.ttf");
 }
 
+@font-face {
+    font-family: 'iconfont';  /* project id 1272591 */
+    src: url('//at.alicdn.com/t/font_1272591_ee8pnfivf5t.eot');
+    src: url('//at.alicdn.com/t/font_1272591_ee8pnfivf5t.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1272591_ee8pnfivf5t.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1272591_ee8pnfivf5t.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1272591_ee8pnfivf5t.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1272591_ee8pnfivf5t.svg#iconfont') format('svg');
+  }
 /* Code Style */
 
 pre {
@@ -47,6 +56,11 @@ body{
     overflow : hidden;
     border-radius: 5px;
     box-shadow:3px 3px 5px #bbb, 1px -1px 0.5px #eee;
+}
+
+.container .main{
+    width : 70%;
+    float : left;
 }
 
 /* Header Style */
@@ -152,4 +166,108 @@ body{
     letter-spacing : 1px;
 }
 
+.post .post-title::after{
+    content: "";
+    display : block;
+    margin : 0.5em auto;
+    width : 20;
+    height : 1px;
+    background-color : #f9f2f4;
+}
 
+.post .post-date{
+    padding : 0;
+    list-style : none;
+    color : #bbb;
+    font : 20px/2.0 chuangzhonghei;
+    text-align : center;
+}
+
+.post .post-date li{
+    display : inline-block;
+}
+
+.post .post-content{
+    position : relative;
+    color : #666;
+    font-size : 1rem;
+    margin-bottom : 1.5em;
+}
+
+.post .post-content img{
+    max-width : 80%;
+    border-radius : 5px;
+}
+
+.post .post-content a{
+    color : #a7535a;
+}
+
+.post .post-content a:hover{
+    color : #541e24;
+}
+
+.aside{
+    overflow : hidden;
+    width : 25%;
+    float : right;
+}
+
+.aside-section{
+    margin : 0 0 3em;
+}
+
+.aside h1{
+    font : 1.5em/1.5 shoukesong;
+    margin : 0.5em 0;
+    color : #a7535a;
+    text-align : center;
+    padding-left : 1em;
+}
+
+.aside .avatar{
+    padding : 10px;
+}
+
+.aside .avatar img{
+    width : 80%;
+    height : auto;
+    display : inline-block;
+    border-radius : 100%;
+    box-shadow : 0 0 0 0.40em #eee;
+    margin-left : 2em;
+    margin-top : 1em;
+    transition : all ease 0.3s;
+}
+
+.aside .avatar img:hover{
+    position : relative;
+    transform : translateY(-1em);
+}
+
+.aside .author-intro {
+    padding-top : 0;
+    margin-top : 0;
+    padding-left : 2em;
+    font : 1.2em/1.5 chuangzhonghei;
+}
+
+.iconfont{
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zhihu:before {
+    content: &#xe69a;
+}
+
+.icon-github:before {
+    content: &#xe718;
+}
+
+.icon-weibo:before{
+    content : &#xe635;
+}
