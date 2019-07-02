@@ -9,13 +9,13 @@
 }
 
 @font-face {
-    font-family: 'iconfont';  /* project id 1272591 */
-    src: url('//at.alicdn.com/t/font_1272591_ee8pnfivf5t.eot');
-    src: url('//at.alicdn.com/t/font_1272591_ee8pnfivf5t.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_1272591_ee8pnfivf5t.woff2') format('woff2'),
-    url('//at.alicdn.com/t/font_1272591_ee8pnfivf5t.woff') format('woff'),
-    url('//at.alicdn.com/t/font_1272591_ee8pnfivf5t.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_1272591_ee8pnfivf5t.svg#iconfont') format('svg');
+    font-family: 'iconfont';
+    src: url('font/iconfont.eot');
+    src: url('font/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('font/iconfont.woff2') format('woff2'),
+        url('font/iconfont.woff') format('woff'),
+        url('font/iconfont.ttf') format('truetype'),
+        url('font/iconfont.svg#iconfont') format('svg');
   }
 /* Code Style */
 
@@ -63,6 +63,32 @@ body{
     float : left;
 }
 
+@media screen and (max-width: 1000px){
+    .container .main {
+      width: 100%;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .container {
+      margin: 3em 0 0;
+      width: 100%;
+      padding: 1.75em;
+    }
+}
+
+.aside{
+    overflow : hidden;
+    width : 25%;
+    float : right;
+}
+
+@media screen and (max-width: 1015px) {
+    .aside {
+      width : 100%;
+      float : middle;
+    }
+}
 /* Header Style */
 .header{
     text-align : center;
@@ -207,16 +233,6 @@ body{
     color : #541e24;
 }
 
-.aside{
-    overflow : hidden;
-    width : 25%;
-    float : right;
-}
-
-.aside-section{
-    margin : 0 0 3em;
-}
-
 .aside h1{
     font : 1.5em/1.5 shoukesong;
     margin : 0.5em 0;
@@ -227,6 +243,8 @@ body{
 
 .aside .avatar{
     padding : 10px;
+    text-align : center;
+    margin-left : 1.5em;
 }
 
 .aside .avatar img{
@@ -235,7 +253,6 @@ body{
     display : inline-block;
     border-radius : 100%;
     box-shadow : 0 0 0 0.40em #eee;
-    margin-left : 2em;
     margin-top : 1em;
     transition : all ease 0.3s;
 }
@@ -248,26 +265,34 @@ body{
 .aside .author-intro {
     padding-top : 0;
     margin-top : 0;
-    padding-left : 2em;
     font : 1.2em/1.5 chuangzhonghei;
+    margin-left : 2em;
 }
 
+.aside .aside-social{
+    text-align : center;
+}
+
+.aside .aside-social .links{
+    margin-left : 1.5em;
+}
 .iconfont{
-    font-family: "iconfont" !important;
-    font-size: 16px;
+    display : inline;
+    font-family: "iconfont";
+    font-size: 2.5em;
+    text-align : center;
+    padding : 0;
+    margin : 0;
     font-style: normal;
+    letter-spacing : 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color : #888;
+    text-decoration : none;
+    transition : font-size 0.3s;
 }
 
-.icon-zhihu:before {
-    content: "&#xe69a";
-}
-
-.icon-github:before {
-    content: "&#xe718";
-}
-
-.icon-weibo:before{
-    content : "&#xe635";
+.iconfont:hover{
+    color : #a7535a;
+    font-size : 3em;
 }
