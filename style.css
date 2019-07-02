@@ -110,3 +110,46 @@ body{
 .header .links ul li a:hover{
     color : #a7535a;
 }
+
+/* Post Style */
+.post{
+    position : relative;
+    border-bottom : 3px dashed #ddd;
+    margin : 0 0 5em;
+    padding : 0 0 3em;
+}
+
+.post::after{
+    content : '';
+    display : block;
+    background : url(img/maple.png) no-repeat top/130px 40px;
+    width : 130px;
+    height : 40px;
+    position : absolute;
+    left : 50%;
+    top : 100%;
+    transform : translate(-50%, -20px);
+}
+
+.post .post-cat{
+    margin : 0 0 3px;
+    color : #a7535a;
+    text-align : center;
+    font : 700 20px chuangzhonghei;
+    transition : 0.3s;
+    text-transform : uppercase;
+    letter-spacing : 6px;
+}
+
+.post .post-title{
+    margin : 0 0 3px;
+    padding : 10px;
+    color : #541e24;
+    text-align : center;
+    font : 700 40px shoukesong;
+    transition : 0.3s;
+    text-transform : uppercase;
+    letter-spacing : 1px;
+}
+
+

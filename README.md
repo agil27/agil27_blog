@@ -23,3 +23,6 @@
 
 #### 网页布局的更改
 
+运用css设置了padding，margin，background，font等属性，使得网页布局大致美观，如下
+
+![dec](C:\Users\dashwood\Documents\GitHub\agil27.github.io\img\dec.jpg)
