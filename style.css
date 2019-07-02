@@ -261,13 +261,13 @@ body{
 }
 
 .icon-zhihu:before {
-    content: &#xe69a;
+    content: "&#xe69a";
 }
 
 .icon-github:before {
-    content: &#xe718;
+    content: "&#xe718";
 }
 
 .icon-weibo:before{
-    content : &#xe635;
+    content : "&#xe635";
 }
