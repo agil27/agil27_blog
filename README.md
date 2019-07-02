@@ -26,3 +26,15 @@
 运用css设置了padding，margin，background，font等属性，使得网页布局大致美观，如下
 
 ![dec](C:\Users\dashwood\Documents\GitHub\agil27.github.io\img\dec.jpg)
+
+#### 增加边栏 · 更改博客文章样式 · 添加社交icon
+
+基本成型了，还增加了transition和hover动画，利用iconfont+unicode实现了可以点击的矢量图标功能
+
+![full](C:\Users\dashwood\Documents\GitHub\agil27.github.io\img\full.jpg)
+
+#### 移动适配性
+
+利用`@media`命令更改布局，在宽度小于1015px时侧边栏放置于下方显示。
+
+![mobile](C:\Users\dashwood\Documents\GitHub\agil27.github.io\img\mobile.jpg)

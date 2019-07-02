@@ -5,7 +5,7 @@
     <title>
         Agil27 Personal Page
     </title>
-    <link rel = "stylesheet" href = "style.css">
+    <link rel = "stylesheet" href = "../style.css">
 </head>
 </html>
 
@@ -13,7 +13,7 @@
     <div class = "container">
         <header class = "header">
             <h1 class = "title">
-                <a href = "index.html" class = "name">
+                <a href = "../index.html" class = "name">
                     汪元标的个人主页
                 </a>
             </h1>
@@ -24,12 +24,12 @@
             <nav class = "links">
                 <ul class = "pages">
                     <li>
-                        <a href = "index.html">
+                        <a href = "../index.html">
                             日志
                         </a>
 
                         <li>
-                            <a href = "aboutme.html">
+                            <a href = "../aboutme.html">
                                 关于我
                             </a>
                         </li>
@@ -42,16 +42,33 @@
             <section class = "posts">
                 <article class = "post">
                     <h4 class = "post-cat">杂谈</h4>
-                    <h1 class = "post-title"><a href = "posts/hello-world.html">你好，世界!</a></h1>
+                    <h1 class = "post-title"><a href = "hello-world.html">你好，世界!</a></h1>
                     <div class = "post-content">
-                            <p>你好，世界！这是纯手写HTML的第一篇blog文章。本博客使用Github Pages构建。</p>
+                        <p>你好，世界！这是纯手写HTML的第一篇blog文章。本博客使用Github Pages构建。</p>
                         
-                            <p>代码测试:</p>
-                            
+                        <p>代码测试:</p>
+                        
 <pre><code>while (true)
 {
     repeat(drink->heytea);
 }</code></pre>
+                        <p> 作为第一篇正式的日志，简要概括一下完成这个Pages的步骤吧!</p>
+                        <h2>开发平台</h2>
+                        <p>操作系统：Windows 10 x64</p>
+                        <p>浏览器：Chrome 75.0</p>
+                        <p>编辑器：VSCode</p>
+                        <h2>过程简介</h2>
+                        <h4>Github Pages申请</h4>
+                        <p>在Github上申请一个账号，然后注册仓库为<code>username.github.io</code>，克隆到本地后即可进行编辑。</p>
+                        <p>我注册的账号名称为<code>agil27</code>，所以相应的仓库名称为<code>agil27.github.io</code>.</p>
+                        <h4>网页内容的构建</h4>
+                        <p>使用HTML语言，快速搭建出网站的内容
+                        <h4>网页布局的更改</h4>
+                        <p>运用css设置了padding，margin，background，font等属性，使得网页布局大致美观，如下</p>
+                        <h4>增加边栏 · 更改博客文章样式 · 添加社交icon</h4>
+                        <p>基本成型了，还增加了transition和hover动画，利用iconfont+unicode实现了可以点击的矢量图标功能</p>
+                        <h4>移动适配性</h4>
+                        <p>利用<code>@media</code>命令更改布局，在宽度小于1015px时侧边栏放置于下方显示。</p>
                     </div>
                     <ul class = "post-date">
                         <li>
@@ -62,29 +79,11 @@
                         </li>
                     </ul>
                 </article>
-
-                <article class = "post">
-                        <h4 class = "post-cat">冷知识</h4>
-                        <h1 class = "post-title"><a href = "posts/munchausen.html">吹牛大王的故事</a></h1>
-                        <div class = "post-content">
-                            <p> 大家都听说过著名的吹牛大王Munchhausen的故事吧！他来自于德国民间传说，后来被改编成电台故事、书籍等等！</p>
-                            <p> 但大家不知道医学上有一种孟乔森综合征，指的是患者没有节制地夸张，放大甚至编造的一种症状，这个其实就是来自于吹牛大王的名字。</p>
-                        </div>
-                        <ul class = "post-date">
-                            <li>
-                                2019年7月2日
-                            </li>
-                            <li>
-                                汪元标
-                            </li>
-                        </ul>
-                    </article>
-            </section>
         </main>
 
         <aside class = "aside">
             <div class = "avatar">
-                <img src = "img/avatar.jpg">
+                <img src = "../img/avatar.jpg">
             </div>
             <section class = "aside-intro">
                 <h1>汪元标</h1>
