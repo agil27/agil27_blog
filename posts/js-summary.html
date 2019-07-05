@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content = "text/html; charset = utf-8">
+    <title>
+        Agil27 Personal Page
+    </title>
+    <link rel = "stylesheet" href = "../style.css">
+</head>
+</html>
+
+<body>
+    <div class = "container">
+        <header class = "header">
+            <h1 class = "title">
+                <a href = "../index.html" class = "name">
+                    汪元标的个人主页
+                </a>
+            </h1>
+            <h2 class = "description">
+                欲戴皇冠，必承其重
+            </h2>
+
+            <nav class = "links">
+                <ul class = "pages">
+                    <li>
+                        <a href = "../index.html">
+                            日志
+                        </a>
+
+                        <li>
+                            <a href = "../aboutme.html">
+                                关于我
+                            </a>
+                        </li>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class = "main">
+            <section class = "posts">
+                <article class = "post">
+                    <h4 class = "post-cat">技术总结</h4>
+                    <h1 class = "post-title"><a href = "hello-world.html">有关Javascript的小总结</a></h1>
+                    <div class = "post-content">
+                        <p>在听了云里雾里的两堂课之后，我几乎什么也没记住，留下深刻印象的只有之前遇到过的一个坑，也就是Javascript中的回调函数。在这里给大家分享一下我对这个问题的认识；同时简单分享下这次刷OJ的体验。请大家自行带入美食作家王刚的语气：下面开始技术总结。</p>                
+                        <div style = "text-align : center"><img src = "..\img\wanggang.jpg"></img></div>
+                        <h2>Javascript中为什么要用函数式编程</h2>
+<p>第一次接触Javascript是在大一我还没有转系的时候，那时在水利系跟着一个学长做一个可视化的项目，学长用react.js搭架构，我用d3.js做可视化，当时我被抛给一堆数据，是json格式的，我看着书上的写法简直懵逼：</p>
+<pre><code>var data = d3.json(&#39;\file\data.json&#39;, function(data){
+	...   
+});
+</code></pre>
+<p>年幼的我对这段代码嗤之以鼻，凭借着自己高中时码c的经验，想当然地改成了下面的样子：</p>
+<pre><code>var data = d3.json(&#39;\file\data.json&#39;);
+function func(data){
+	...
+}
+func(data);
+</code></pre>
+<p>结果是惨痛的，我发现似乎程序并没有读进来我需要的数组，导致我的可视化成了一片空白的画布。我仔细翻阅我的d3教程，才在不起眼的注释中发现了这句话：</p>
+<blockquote><p>d3.json基于AJAX，采用异步回调机制</p>
+</blockquote>
+<p>虽然我不怎么看得懂“异步回调机制”这几个字，但我凭借自己的直觉推断，大概是我在执行<code>func(data)</code>时数据还没加载好，那怎么办？看来只能采用传递函数作为参数的方法了，那万一函数很复杂怎么办？<a href='https://www.liaoxuefeng.com/wiki/1022910821149312/1023024381818112'>廖雪峰的blog</a>中讲述了这样一个例子：</p>
+<pre><code>ajax(&#39;http://url-1&#39;, data1, function (err, result) {
+    if (err) {
+        return handle(err);
+    }
+    ajax(&#39;http://url-2&#39;, data2, function (err, result) {
+        if (err) {
+            return handle(err);
+        }
+        ajax(&#39;http://url-3&#39;, data3, function (err, result) {
+            if (err) {
+                return handle(err);
+            }
+            return success(result);
+        });
+    });
+});
+</code></pre>
+<p>层层嵌套，实在是太复杂了，但利用ES6的Generator语法，可以简单地写成</p>
+<pre><code>try {
+    r1 = yield ajax(&#39;http://url-1&#39;, data1);
+    r2 = yield ajax(&#39;http://url-2&#39;, data2);
+    r3 = yield ajax(&#39;http://url-3&#39;, data3);
+    success(r3);
+}
+catch (err) {
+    handle(err);
+}
+</code></pre>
+<p>康康yield语句有多强大，直接把异步回调函数变成看上去“同步”的了。</p>
+<p>&nbsp;</p>
+<h2>OJ题大致解题思路</h2>
+<h3>第一题 ddl排序</h3>
+<p>很简单，既然假定都是1970年后的了，使用Date对象的parse功能直接获取秒数即可。排序可以给sort传一个匿名函数来决定排序依据。</p>
+<h3>第二题 迭代器</h3>
+<p>利用Generator语法先序遍历树存到数组里即可，似乎该语法不支持递归，那就手写一个栈来保存了。</p>
+<h3>第三题 fmap</h3>
+<p>跟深拷贝的实现差不多，用<code>instanceof</code>来判断是否是数组。个人认为用<code>typeof</code>不妥，因为数组和对象都会返回<code>Object</code>.</p>
+<h3>第五题 表达式求值</h3>
+<p>表达式先转化为波兰式（后缀式），再求值，两步都用到了栈。</p>
+<p>确定计算的函数可以先根据运算符确定计算函数，再决定参数顺序，这一步对匿名函数反复折腾，累。</p>
+                    </div>
+                    <ul class = "post-date">
+                        <li>
+                            2019年7月2日
+                        </li>
+                        <li>
+                            汪元标
+                        </li>
+                    </ul>
+                </article>
+        </main>
+
+        <aside class = "aside">
+            <div class = "avatar">
+                <img src = "../img/avatar.jpg">
+            </div>
+            <section class = "aside-intro">
+                <h1>汪元标</h1>
+                <p class = "author-intro">
+                    一名来自清华大学软件学院的本科生，喜欢音乐剧，为清华大学音乐剧社成员，参演《致埃文汉森》</p>
+                </p>
+            </section>
+
+            <section class = "aside-social">
+                <div class = links>
+                    <a class = "iconfont" href = "https://weibo.com/u/2250891810">&#xe635;</a>
+                    <a class = "iconfont" href = "https://github.com/agil27">&#xe718;</a>
+                    <a class = "iconfont" href = "https://www.zhihu.com/people/wang-yuan-biao-ai-mei-nv/activities">&#xe69a;</a>
+                </div>
+            </section>
+        </aside>
+    </div>
+</body>
+
