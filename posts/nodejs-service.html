@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content = "text/html; charset = utf-8">
+    <title>
+        Agil27 Personal Page
+    </title>
+    <link rel = "stylesheet" href = "../style.css">
+</head>
+</html>
+
+<body>
+    <div class = "container">
+        <header class = "header">
+            <h1 class = "title">
+                <a href = "../index.html" class = "name">
+                    汪元标的个人主页
+                </a>
+            </h1>
+            <h2 class = "description">
+                欲戴皇冠，必承其重
+            </h2>
+
+            <nav class = "links">
+                <ul class = "pages">
+                    <li>
+                        <a href = "../index.html">
+                            日志
+                        </a>
+
+                        <li>
+                            <a href = "../aboutme.html">
+                                关于我
+                            </a>
+                        </li>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class = "main">
+            <section class = "posts">
+                <article class = "post">
+                    <h4 class = "post-cat">技术总结</h4>
+                    <h1 class = "post-title"><a href = "nodejs-service.html">使用NodeJS实现简单服务</a></h1>
+                    <div class = "post-content">
+                        <h2>环境配置</h2>
+<p>使用ssh登陆服务器后，安装NodeJS服务后，使用<code>npm init</code>命令创建一个应用，默认为<code>index.js</code>。然后使用<code>npm install express --save</code>安装Express框架。安装完成后，使用</p>
+<pre><code>var expresvar express = require(&#39;express&#39;)
+var app = express()
+</code></pre>
+<p>使用Express框架</p>
+<h2>实现静态文件托管</h2>
+<p>在目录下创建<code>/public</code>目录，然后利用<code>app.use</code>函数将虚拟地址映射到该文件夹下，即可通过<code>ip:port/addr</code>访问相关静态文件。</p>
+<p>在本例中，使用<a href = 154.8.228.221:8000>154.8.228.221:8000</a>可访问作者主页。</p>
+<h2>实现API</h2>
+<h3>请求数据的处理</h3>
+<p>采用multer中间件，实现对各种类型请求的路由。</p>
+<pre><code>var multer = require(&#39;multer&#39;)
+var upload = multer()
+...
+app.xxx(&#39;api/yyy&#39;,upload.none(), function(req, res)) {
+	...
+}
+</code></pre>
+<p>注意，POST，GET的请求位于<code>req.body</code>内，DELETE请求位于<code>req.query</code>内</p>
+<p>采用<code>res.json</code>发送application/json格式的结果，<code>res.status</code>发送状态码。</p>
+<h3>hw-token的识别</h3>
+<p>采用函数<code>req.get(&#39;hw-token&#39;)</code>获得请求的hw-token并和自己的token比较，若不匹配返回403状态码。</p>
+<h3>数据持久化</h3>
+<p>使用一个全局变量<code>buf</code>，类型为对象，对于键值对</p>
+<pre><code>{
+	&#39;name&#39; : XXX,
+	&#39;key&#39;  : yyy
+}
+</code></pre>
+<p>我们令<code>buf[xxx] = yyy</code>.</p>
+                    </div>
+                    <ul class = "post-date">
+                        <li>
+                            2019年7月11日
+                        </li>
+                        <li>
+                            汪元标
+                        </li>
+                    </ul>
+                </article>
+        </main>
+
+        <aside class = "aside">
+            <div class = "avatar">
+                <img src = "../img/avatar.jpg">
+            </div>
+            <section class = "aside-intro">
+                <h1>汪元标</h1>
+                <p class = "author-intro">
+                    一名来自清华大学软件学院的本科生，喜欢音乐剧，为清华大学音乐剧社成员，参演《致埃文汉森》</p>
+                </p>
+            </section>
+
+            <section class = "aside-social">
+                <div class = links>
+                    <a class = "iconfont" href = "https://weibo.com/u/2250891810">&#xe635;</a>
+                    <a class = "iconfont" href = "https://github.com/agil27">&#xe718;</a>
+                    <a class = "iconfont" href = "https://www.zhihu.com/people/wang-yuan-biao-ai-mei-nv/activities">&#xe69a;</a>
+                </div>
+            </section>
+        </aside>
+    </div>
+</body>
+
